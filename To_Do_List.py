@@ -17,6 +17,7 @@ def load_tasks_from_list():
             return []
     return []
 
+
 def save_tasks_to_disk(tasks_list):
     """Saves Python list to a text file on disk permanently."""
     with open(DATABASE_FILE, "w") as file:
