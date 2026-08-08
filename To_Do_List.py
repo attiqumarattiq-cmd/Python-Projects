@@ -15,12 +15,12 @@ def load_tasks_from_disk():
                 return json.load(file)
         except json.JSONDecoderError:
             return[]
-        return[]
+    return[]
     
     
 def save_tasks_to_disk(tasks_list):
     with open(DATABASE_FILE, "w") as file:
-        json.dump(tasks_list, file, index = 4)  
+        json.dump(tasks_list, file, indet = 4)  
         # converts python data to json data formate
         #tasks_list: The first argument; the Python data structure you are saving.file: 
         #The second argument:  The target file object where the data is being written
@@ -42,5 +42,20 @@ def main():
         print("2. Add a new task.")
         print("3. Delete a task")
         print("4. Exist Program")
+        
+        user_choice = input("\nEnter choice(1-4): ").strip()
+        # Strip cancels the extra spaces in the input enter by user
+        
 
 
+
+
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    main()
