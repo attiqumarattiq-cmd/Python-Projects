@@ -27,6 +27,20 @@ def save_tasks_to_disk(tasks_list):
         
 
 
+#=====================================================================
+#------------ MAIN CONTROL PANEL --------------
+#=====================================================================
 
+def main():
+    
+    tasks_database = load_tasks_from_disk()
+    print(tasks_database)
+
+    while True:
+        print("\n=== TO DO LIST ENGINE ===")
+        print("1. View all tasks.")
+        print("2. Add a new task.")
+        print("3. Delete a task")
+        print("4. Exist Program")
 
 
