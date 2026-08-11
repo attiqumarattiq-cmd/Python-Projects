@@ -82,6 +82,7 @@ def display_all_tasks(tasks_list):
     print("         YOUR TO-DO LIST          ")
     print("==================================")
     
+    
     for display_number, task in enumerate(tasks_list, start=1):
         task_id = task["id"]
         task_title = task["title"]
