@@ -122,7 +122,6 @@ def main():
         elif user_choice == "3":
             # Display current list first so user knows which number to select
             has_items = display_all_tasks(tasks_database)
-            
             if has_items:
                 user_input = input("\nEnter the Task Number to delete: ").strip()
                 
