@@ -110,7 +110,8 @@ def main():
 
         if user_choice == "1":
             display_all_tasks(tasks_database)
-
+            
+            
         elif user_choice == "2":
             new_title = input("\nEnter task description: ").strip()
             if new_title != "":
