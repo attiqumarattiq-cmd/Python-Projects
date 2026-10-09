@@ -127,8 +127,22 @@ while keepgoing:
             resources["water"] = resources["water"] - waterreq
             resources["milk"] = resources["milk"] - milkreq
             resources["coffee"] = resources["coffee"] - coffeeleft
+            
+            if change >= 0:
+                print(f"Your change: ${change}")
+                print("Enjoy your latte !")
         
-        elif          
+        elif waterreq > waterleft or milkreq > waterleft or coffeereq > waterleft:
+            print("Sorry, the machine does not enough ingredients!")
+        else:
+            print("Sorry, You did not put enough money ! Here is your refund !")
+                      
+    elif choice == 4:
+        money = calculatemoney()
+        
+        waterreq = MENU["cappuccino"]["ingredients"]["water"]
+        milkreq =  MENU["cappuccino"]["ingredients"]["milk"]
+        coffeereq = MENU["cappuccino"]["ingredients"]["coffee"]
         
         
         
