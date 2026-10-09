@@ -17,9 +17,9 @@ logo = '''
 
 profit =  0
 resources = {
-    "water": 300,
-    "milk": 200,
-    "coffee": 100,
+    "water": 2000,
+    "milk": 2000,
+    "coffee": 2000,
 }
 
 menuprint ='''
@@ -69,10 +69,6 @@ def calculatemoney():
 
 
 
-
-
-
-
 # MAIN CODE TO RUN
 print(logo)
 keepgoing = True
@@ -95,7 +91,7 @@ while keepgoing:
     elif choice == 2:
         money = calculatemoney()
         
-        waterreq = MENU["epresso"]["ingredients"]["water"]
+        waterreq = MENU["espresso"]["ingredients"]["water"]
         coffeereq = MENU["espresso"]["ingredients"]["coffee"]
         cost = MENU["espresso"]["cost"]
         
@@ -118,7 +114,7 @@ while keepgoing:
         
         waterreq =  MENU["latte"]["ingredients"]["water"]
         milkreq = MENU["latte"]["ingredients"]["milk"]
-        coffeereq = MENU["latte"]["ingrredients"]["coffee"]
+        coffeereq = MENU["latte"]["ingredients"]["coffee"]
         cost = MENU["latte"]["cost"]
         
         if money >= cost and waterreq <= waterleft and milkreq <= milkleft and coffeereq <= coffeeleft:
@@ -126,7 +122,7 @@ while keepgoing:
             profit = profit + cost
             resources["water"] = resources["water"] - waterreq
             resources["milk"] = resources["milk"] - milkreq
-            resources["coffee"] = resources["coffee"] - coffeeleft
+            resources["coffee"] = resources["coffee"] - coffeereq
             
             if change >= 0:
                 print(f"Your change: ${change}")
@@ -145,7 +141,7 @@ while keepgoing:
         coffeereq = MENU["cappuccino"]["ingredients"]["coffee"]
         cost = MENU["cappuccino"]["cost"]
         
-        if money <= cost and waterreq <= waterleft and coffeereq <= coffeeleft:
+        if money >= cost and waterreq <= waterleft and coffeereq <= coffeeleft:
             change = money - cost
             profit = profit + cost
             resources["water"] = resources["water"] - waterreq
@@ -160,6 +156,10 @@ while keepgoing:
             print("Sorry, the machine does not enough ingredients!")
         else:
             print("Sorry, You did not put enough money ! Here is your refund !")
+        
+    elif choice == 5:
+        print("Good Bye!")
+        keepgoing = False
         
         
         
