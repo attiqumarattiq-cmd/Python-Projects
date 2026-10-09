@@ -132,7 +132,7 @@ while keepgoing:
                 print(f"Your change: ${change}")
                 print("Enjoy your latte !")
         
-        elif waterreq > waterleft or milkreq > waterleft or coffeereq > waterleft:
+        elif waterreq >= waterleft or milkreq >= waterleft or coffeereq >= waterleft:
             print("Sorry, the machine does not enough ingredients!")
         else:
             print("Sorry, You did not put enough money ! Here is your refund !")
@@ -143,7 +143,23 @@ while keepgoing:
         waterreq = MENU["cappuccino"]["ingredients"]["water"]
         milkreq =  MENU["cappuccino"]["ingredients"]["milk"]
         coffeereq = MENU["cappuccino"]["ingredients"]["coffee"]
+        cost = MENU["cappuccino"]["cost"]
         
+        if money <= cost and waterreq <= waterleft and coffeereq <= coffeeleft:
+            change = money - cost
+            profit = profit + cost
+            resources["water"] = resources["water"] - waterreq
+            resources["milk"] = resources["milk"] - milkreq
+            resources["coffee"] = resources["coffee"] - coffeereq
+            
+            if change >= 0:
+                print(f"Your change is: ${change}")
+                print("Enjoy your cappuccino")
+                
+        elif waterreq >= waterleft or milkreq >= waterleft or coffeereq >= waterleft:
+            print("Sorry, the machine does not enough ingredients!")
+        else:
+            print("Sorry, You did not put enough money ! Here is your refund !")
         
         
         
